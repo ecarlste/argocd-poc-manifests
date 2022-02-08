@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: express-hello-world
+  name: express-hello-world
+  namespace: express-hello-world
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: express-hello-world
+  type: ClusterIP
